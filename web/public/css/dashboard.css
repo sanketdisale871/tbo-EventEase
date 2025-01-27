@@ -281,13 +281,13 @@ a {
 }
 
 .add-account-btn {
-  border-radius: 20px !important;
-  padding: 14px !important;
+  border-radius: 10px !important;
+  padding: 3px !important;
   background-color: #041643;
   color: white;
   /* border: none; */
   cursor: pointer;
-  font-size: 17px;
+  font-size: 19px;
 }
 
 /* Modal styling */
@@ -304,11 +304,12 @@ a {
 
 .modal-content {
   background-color: white;
-  margin: 9% auto;
+  margin: 5% auto;
   padding: 20px;
   border: 1px solid #888;
-  border-radius: 3%;
-  width: 453px;
+  border-radius: 20px;
+  width: 1496px;
+  margin-left: 23rem;
 }
 
 #accountType,
