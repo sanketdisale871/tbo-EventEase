@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
 
-    <title>citiGPT | citiwise</title>
+    <title>tboease | citiwise</title>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -120,7 +120,7 @@
       }
     </style>
 
-    <!-- Chat ka style -->
+    <!-- Chat ka style
     <style>
       .chat-container {
         flex-grow: 1;
@@ -221,7 +221,7 @@
       .send-btn {
         font-family: "Poppins", sans-serif;
       }
-    </style>
+    </style> -->
 
     <style>
       /* Loader animation */
@@ -341,160 +341,61 @@
     </div>
 
     <!-- Main Body -->
-    <div style="margin-left: 300px; padding-left: 20px">
-      <div
-        class="section-name"
-        style="
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 10px;
-          background-color: #ffffff;
-          box-shadow: 2px 5px 20px rgba(12, 12, 12, 0.1);
-        "
-      >
-        <!-- <div style="font-size: 22px; font-weight: bold; color: #000000">
-          Chat with citiGPT
-        </div> -->
-        <div style="font-size: 22px; font-weight: bold; color: #000000">
-          Chat with thalesGPT
-        </div>
+    <div>
+      <div style="margin-left: 300px; padding-left: 20px">
+        <div
+          class="section-name"
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #ffffff;
+            box-shadow: 2px 5px 20px rgba(12, 12, 12, 0.1);
+          "
+        >
+          <div style="font-size: 22px; font-weight: bold; color: #000000">
+            Chat to prepare Event Itinerary
+          </div>
 
-        <div style="display: flex; align-items: center">
-          <div style="text-align: right; margin-right: 10px">
-            <div style="font-size: 16px; font-weight: bold; color: #041643">
-              <%=user.name%>
+          <div style="display: flex; align-items: center">
+            <div style="text-align: right; margin-right: 10px">
+              <div style="font-size: 16px; font-weight: bold; color: #041643">
+                <%=user.name%>
+              </div>
+              <!-- <div style="font-size: 12px; color: #072777">Family ID: 12345</div> -->
+              <% if(user.familyId){ %>
+              <div style="font-size: 12px; color: #072777">
+                Family ID: <%=user.familyId%>
+              </div>
+              <% } %>
             </div>
-            <!-- <div style="font-size: 12px; color: #072777">Family ID: 12345</div> -->
-            <% if(user.familyId){ %>
-            <div style="font-size: 12px; color: #072777">
-              Family ID: <%=user.familyId%>
+
+            <div
+              style="
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: #000000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              <i
+                class="ri-account-circle-fill"
+                style="font-size: 40px; color: #ffffff"
+              ></i>
             </div>
-            <% } %>
-          </div>
-
-          <div
-            style="
-              width: 50px;
-              height: 50px;
-              border-radius: 50%;
-              background-color: #000000;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            "
-          >
-            <i
-              class="ri-account-circle-fill"
-              style="font-size: 40px; color: #ffffff"
-            ></i>
           </div>
         </div>
-      </div>
-
-      <!-- Chat wala UI -->
-      <div class="chat-container">
-        <div class="chat-messages" id="chat-messages">
-          <!-- Chat bubbles will appear here -->
-        </div>
-
-        <div class="chat-input">
-          <input
-            style="font-family: 'Poppins'"
-            type="text"
-            id="userInput"
-            placeholder="Type your message..."
-            onkeypress="handleKeyPress(event)"
-          />
-          <div
-            id="loader"
-            style="display: none; text-align: center; padding: 10px"
-          >
-            <div class="loader"></div>
-          </div>
-
-          <button
-            onclick="sendMessage()"
-            class="send-btn"
-            style="
-              background-color: #072777;
-              font-size: large;
-              padding-left: 30px;
-              padding-right: 30px;
-            "
-          >
-            Ask
-          </button>
-        </div>
+        <typebot-standard style="width: 100%; height: 100vh"></typebot-standard>
       </div>
     </div>
+    <script type="module">
+      import Typebot from "https://cdn.jsdelivr.net/npm/@typebot.io/js@0.3/dist/web.js";
 
-    <script>
-      const chatMessages = document.getElementById("chat-messages");
-
-      async function sendMessage() {
-        const userInput = document.getElementById("userInput");
-        const messageText = userInput.value.trim();
-
-        if (messageText !== "") {
-          // Add user's message to the chat UI
-          addMessage(messageText, "user-message");
-
-          userInput.value = "";
-
-          try {
-            document.getElementById("loader").style.display = "block";
-            // Send the user input to the chatbot via a POST request
-            const response = await fetch("/api/botresponse", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ userPrompt: messageText }),
-            });
-
-            // Check if the response is successful
-            if (!response.ok) {
-              throw new Error("Network response was not ok");
-            }
-
-            // Parse the JSON response from the server
-            const responseData = await response.json();
-
-            // Display the bot's response
-            if (responseData.botResponse) {
-              addMessage(responseData.botResponse, "bot-message");
-            } else {
-              // If the response doesn't have the expected data
-              addMessage("Sorry, I couldn't understand that.", "bot-message");
-            }
-          } catch (error) {
-            // Handle any errors during the fetch operation
-            console.error("Error:", error);
-            addMessage(
-              "There was an error processing your request. Please try again later.",
-              "bot-message"
-            );
-          } finally {
-            document.getElementById("loader").style.display = "none";
-          }
-        }
-      }
-
-      function handleKeyPress(event) {
-        if (event.key === "Enter") {
-          sendMessage();
-        }
-      }
-
-      function addMessage(text, className) {
-        const messageBubble = document.createElement("div");
-        messageBubble.classList.add("message", className);
-        messageBubble.innerText = text;
-
-        chatMessages.appendChild(messageBubble);
-        chatMessages.scrollTop = chatMessages.scrollHeight; // Auto-scroll to bottom
-      }
+      Typebot.initStandard({ typebot: "tbo-event-ease" });
     </script>
   </body>
 </html>

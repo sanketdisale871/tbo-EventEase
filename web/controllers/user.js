@@ -853,7 +853,7 @@ const index = pc.index(indexName);
 
 // Initialize ChatGroq
 const llm = new ChatGroq({
-  model: "llama-3.1-70b-versatile",
+  model: "llama-3.3-70b-versatile",
   temperature: 0,
   maxTokens: undefined,
   maxRetries: 2,
