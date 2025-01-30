@@ -319,7 +319,11 @@ const renderDashboard = async (req, res) => {
       totalInvested += user.investments[i].amount;
     }
     if (user) {
-      return res.render("dashboard", { user, totalBalance, totalInvested });
+      return res.render("user_dashboard", {
+        user,
+        totalBalance,
+        totalInvested,
+      });
     }
     return res.render("login", { errMsg: "Account not found!" });
   } catch (err) {
@@ -659,7 +663,7 @@ const renderLearnings = async (req, res) => {
     const user = await User.findById(userId).populate("accounts").exec();
 
     if (user) {
-      return res.render("learnings", { user });
+      return res.render("landing_page", { user });
     }
     return res.render("login", { errMsg: "Account not found!" });
   } catch (err) {
@@ -827,7 +831,7 @@ const renderLiabilities = async (req, res) => {
       totalFamilyliabilities = totalPersonalLiabilities;
     }
 
-    return res.render("liabilities", {
+    return res.render("landing_page", {
       user,
       totalPersonalLiabilities,
       totalFamilyliabilities,
