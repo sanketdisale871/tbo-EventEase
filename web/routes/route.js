@@ -10,4 +10,9 @@ router.get("/login", userController.renderLogin);
 router.get("/register", userController.renderRegister);
 router.get("/citigpt", requireUserAuth, userController.renderChat);
 
+router.get(
+  "/itinerary/:itineraryid",
+  requireUserAuth,
+  userController.renderItinerary
+);
 module.exports = router;

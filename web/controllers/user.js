@@ -164,6 +164,29 @@ const renderChat = async (req, res) => {
   }
 };
 
+const renderItinerary = async (req, res) => {
+
+  try {
+
+    const itineraryId = req.params.itineraryid;
+    if (!itineraryId) {
+      return res.status(400).send("Itinerary ID is required");
+    }
+
+    const itinerary = await Itinerary.findById(itineraryId);
+
+    if (!itinerary) {
+      return res.status(404).send("Itinerary not found");
+    }
+
+    res.render("itinerary", { itinerary });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Error fetching itinerary");
+  }
+};
+
+
 // ::::::::::::::::::::::;;;; Chat bot End;;;;;;;;::::::::::::
 module.exports = {
   renderDashboard,
@@ -174,6 +197,7 @@ module.exports = {
 
   logout,
   renderChat,
+  renderItinerary,
 };
 
 // Liabilities

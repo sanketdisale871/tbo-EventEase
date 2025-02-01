@@ -1,0 +1,21 @@
+# Ignore virtual environments
+venv/
+env/
+.venv/
+.env/
+*/venv/
+*/env/
+*/.venv/
+*/.env/
+
+# Ignore Python cache files
+*/__pycache__/
+*.py[cod]
+*$py.class
+
+# Ignore node modules
+node_modules/
+*/node_modules/
+
+.env
+/.env
