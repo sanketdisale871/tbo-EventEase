@@ -87,7 +87,7 @@ const login = async (req, res) => {
     const user = await User.login(email, password);
 
     // If login is successful, generate a token
-    const token = createUserToken(user._id);
+    // const token = createUserToken(user._id);
 
     res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
     res.redirect("/");
@@ -107,14 +107,27 @@ const renderDashboard = async (req, res) => {
   try {
     const user = await User.findById(userId);
 
+    let upcomingEvents = 0;
+    let eventReg = user.events.length;
+
+    for (let i = 0; i < user.events.length; i++) {
+      if (user.events[i].date > new Date()) {
+        upcomingEvents++;
+      }
+    }
+
     if (user) {
       if (user.role === "Attendee") {
         return res.render("user_dashboard", {
           user,
+          upcomingEvents,
+          eventReg,
         });
       } else {
         return res.render("dashboard", {
           user,
+          upcomingEvents,
+          eventReg,
         });
       }
     }

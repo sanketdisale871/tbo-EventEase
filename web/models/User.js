@@ -41,9 +41,12 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  eventReg: {
-    type: Number,
-  },
+  events: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Event",
+    },
+  ],
 });
 
 userSchema.statics.login = async function (email, password) {
