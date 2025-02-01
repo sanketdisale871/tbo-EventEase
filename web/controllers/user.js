@@ -2,9 +2,13 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 const Account = require("../models/Account");
-const Family = require("../models/Family");
+const Event = require("../models/Event");
+const Itinerary = require("../models/Itinerary");
+const AttenRes = require("../models/User_Attend_Res");
+
 // create json web token
 const maxAge = 1000 * 365 * 24 * 60 * 60;
+
 const createUserToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET_KEY, {
     expiresIn: maxAge,
