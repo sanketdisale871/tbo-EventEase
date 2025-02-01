@@ -1,0 +1,23 @@
+[project]
+name = "tboeventcrew"
+version = "0.1.0"
+description = "tboEventCrew"
+authors = [{ name = "Siddhesh Desai", email = "siddheshdesai777@gmail.com" }]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "crewai[tools]>=0.98.0,<1.0.0"
+]
+
+[project.scripts]
+tboeventcrew = "tboeventcrew.main:run"
+run_crew = "tboeventcrew.main:run"
+train = "tboeventcrew.main:train"
+replay = "tboeventcrew.main:replay"
+test = "tboeventcrew.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"

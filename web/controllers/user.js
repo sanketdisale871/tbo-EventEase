@@ -988,6 +988,33 @@ const getResponse = async (req, res) => {
 };
 
 // ::::::::::::::::::::::;;;; Chat bot End;;;;;;;;::::::::::::
+
+
+// View Itinerary route
+const renderItinerary = async (req, res) => {
+  try {
+    const itinerary = await Itinerary.findById(req.params.itineraryid);
+
+    if (!itinerary) {
+      return res.status(404).render('error', {
+        errMsg: 'Itinerary not found'
+      });
+    }
+
+    return res.render('itinerary', {
+      itinerary,
+      errMsg: null
+    });
+
+  } catch (error) {
+    console.error('Error fetching itinerary:', error);
+    return res.status(500).render('error', {
+      errMsg: 'Error loading itinerary. Please try again.'
+    });
+  }
+}
+
+
 module.exports = {
   renderDashboard,
   getResponse,
@@ -1013,6 +1040,7 @@ module.exports = {
   renderExpenses,
   renderLiabilities,
   addLiabilities,
+  renderItinerary,
 };
 
 // Liabilities

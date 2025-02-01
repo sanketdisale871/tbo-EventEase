@@ -18,6 +18,8 @@ router.post('/family/join', requireUserAuth, userController.joinFamily);
 router.get('/family/delete/:familyId/:goalId', requireUserAuth, userController.deleteFamilyGoal);
 router.post('/family/goal/:familyId', requireUserAuth, userController.addFamilyGoal);
 router.get('/goal/delete/:goalType', requireUserAuth, userController.deleteGoal);
+router.get('/itinerary/:itineraryid', userController.renderItinerary);
+
 
 
 module.exports = router;
