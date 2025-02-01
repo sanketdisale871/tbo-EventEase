@@ -238,9 +238,7 @@
               />
             </div>
             <div class="registration-group">
-              <label for="userCountry" class="registration-label"
-                >Country:</label
-              >
+              <label for="userCountry" class="registration-label">Role:</label>
               <select
                 id="userRole"
                 name="role"
@@ -248,58 +246,56 @@
                 required
               >
                 <option value="">Role</option>
-                <option value="attendee">Attendee</option>
-                <option value="organiser">Organiser</option>
+                <option value="Attendee">Attendee</option>
+                <option value="Organiser">Organiser</option>
                 <!-- Add more options as needed -->
               </select>
             </div>
 
             <div class="registration-group">
-              <label for="userOccupation" class="registration-label"
-                >Occupation</label
+              <label for="userCompany" class="registration-label"
+                >Company Name</label
               >
               <input
                 type="text"
-                id="userOccupation"
-                name="occupation"
+                id="userCompany"
+                name="companyName"
                 class="registration-input"
                 required
               />
             </div>
 
             <div class="registration-group">
-              <label for="userCurrency" class="registration-label"
-                >Currency:</label
+              <label for="userDesignation" class="registration-label"
+                >Designation</label
+              >
+              <input
+                type="text"
+                id="userDesignation"
+                name="designation"
+                class="registration-input"
+                required
+              />
+            </div>
+
+            <div class="registration-group">
+              <label for="userCountry" class="registration-label"
+                >Country:</label
               >
               <select
-                id="userCurrency"
-                name="currency"
+                id="userCountry"
+                name="country"
                 class="registration-select"
                 required
               >
-                <option value="">Select Currency</option>
-                <option value="USD">USD</option>
-                <option value="INR">INR</option>
-                <option value="GBP">GBP</option>
-                <option value="AUD">AUD</option>
+                <option value="">Select Country</option>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="Canada">Canada</option>
+                <option value="Germany">Germany</option>
                 <!-- Add more options as needed -->
               </select>
             </div>
-
-            <div class="registration-group">
-              <label for="userIncome" class="registration-label"
-                >Annual Income:</label
-              >
-              <input
-                type="number"
-                id="userIncome"
-                name="annualIncome"
-                class="registration-input"
-                placeholder="Enter amount in USD"
-                required
-              />
-            </div>
-
             <div class="registration-group">
               <input type="submit" value="Submit" class="registration-submit" />
             </div>

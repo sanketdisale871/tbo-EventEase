@@ -17,6 +17,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  repassword: {
+    type: String,
+    required: true,
+  },
   phone: {
     type: String,
     required: true,
@@ -33,13 +37,12 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  eventReg: {
-    type: Number,
-    required: true,
-  },
   country: {
     type: String,
     required: true,
+  },
+  eventReg: {
+    type: Number,
   },
 });
 
