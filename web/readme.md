@@ -85,7 +85,7 @@ The technologies and tools used are:
 
 <!-- CONTRIBUTING -->
 
-## Some Glimpses of WorkConnect
+<!-- ## Some Glimpses of WorkConnect -->
 
 <!-- - Dashboard
   ![alt text](image.png)
