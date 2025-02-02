@@ -36,9 +36,6 @@
     </nav>
     <div class="image-container">
       <!-- <img src="/img/amazon.jpg" alt="Event Image" class="main-image" /> -->
-      <div class="overlay-text" style="margin-top: 2rem">
-        <%= event.event_title%>
-      </div>
     </div>
 
     <div class="event-details">
@@ -49,7 +46,9 @@
           event.location.country%>
         </p>
         <button class="register-button">Register</button>
-        <p class="registered-info">100 people registered</p>
+        <p class="registered-info">
+          <%= event.attendees ? event.attendees.length : 0 %>
+        </p>
       </div>
       <div class="event-date">
         <div class="date-box">
@@ -198,7 +197,8 @@
         <div class="attendee-card">
           <h4 class="attendee-card-heading">Connect with Attendees</h4>
 
-          <div class="attendee-row">
+          <h5>You are the First Attendee!</h5>
+          <!-- <div class="attendee-row">
             <img src="/img/Photo.jpg" alt="Attendee 1" class="attendee-photo" />
             <div class="attendee-info">
               <span class="attendee-name">Kunal Vinayak Bura</span>
@@ -212,7 +212,7 @@
               <span class="attendee-name">Mayuri Kishor Bura</span>
               <button class="message-button">Message Her</button>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
