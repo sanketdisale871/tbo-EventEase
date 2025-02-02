@@ -49,6 +49,13 @@
         <p class="registered-info">
           <%= event.attendees ? event.attendees.length : 0 %>
         </p>
+        <form action="/register-event" method="POST">
+          <input type="hidden" name="event_id" value="<%= event._id %>" />
+          <button type="submit" class="register-button" <%= is_registered ? 'disabled' : '' %>>
+            <%= is_registered ? 'Already Registered' : 'Register' %>
+          </button>
+        </form>
+        <p class="registered-info">100 people registered</p>
       </div>
       <div class="event-date">
         <div class="date-box">
@@ -115,7 +122,12 @@
           </div>
         </div>
         <div class="stat-row">
-          <button class="register-now-button">Register Now</button>
+            <form action="/register-event" method="POST">
+                <input type="hidden" name="event_id" value="<%= event._id %>" />
+                <button type="submit" class="register-button" <%= is_registered ? 'disabled' : '' %>>
+                  <%= is_registered ? 'Already Registered' : 'Register' %>
+                </button>
+              </form>
         </div>
       </div>
     </div>
