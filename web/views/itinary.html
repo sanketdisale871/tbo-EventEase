@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Details - Editable Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      label {
+        font-weight: bold;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 8px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      .container {
+        margin-bottom: 20px;
+      }
+      .section {
+        margin-bottom: 20px;
+      }
+      button {
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Edit Event Details</h1>
+
+    <div class="container">
+      <label for="company_name">Company Name:</label>
+      <input type="text" id="company_name" value="Example Company" />
+    </div>
+
+    <div class="container">
+      <label for="event_title">Event Title:</label>
+      <input type="text" id="event_title" value="Team Building Event" />
+    </div>
+
+    <div class="container">
+      <label for="date_range_start">Start Date:</label>
+      <input type="date" id="date_range_start" value="2024-05-01" />
+    </div>
+
+    <div class="container">
+      <label for="date_range_end">End Date:</label>
+      <input type="date" id="date_range_end" value="2024-05-05" />
+    </div>
+
+    <div class="section">
+      <h3>Budget Breakdown</h3>
+      <label for="accommodation_budget">Accommodation ($):</label>
+      <input type="number" id="accommodation_budget" value="1000.0" />
+
+      <label for="food_budget">Food ($):</label>
+      <input type="number" id="food_budget" value="500.0" />
+
+      <label for="miscellaneous_budget">Miscellaneous ($):</label>
+      <input type="number" id="miscellaneous_budget" value="200.0" />
+
+      <label for="venue_budget">Venue ($):</label>
+      <input type="number" id="venue_budget" value="1500.0" />
+
+      <label for="total_budget">Total Budget ($):</label>
+      <input type="number" id="total_budget" value="3200.0" />
+    </div>
+
+    <div class="section">
+      <h3>Food Arrangements</h3>
+      <label for="is_food_required">Is food required?</label>
+      <select id="is_food_required">
+        <option value="true" selected>Yes</option>
+        <option value="false">No</option>
+      </select>
+
+      <label for="dietary_restrictions">Dietary Restrictions:</label>
+      <input type="text" id="dietary_restrictions" value="Vegetarian, Vegan" />
+
+      <label for="meal_schedule">Meal Schedule (Breakfast, Lunch):</label>
+      <textarea id="meal_schedule" rows="4">
+Breakfast: 08:00 - 09:00, Lunch: 13:00 - 13:30</textarea
+      >
+    </div>
+
+    <div class="section">
+      <h3>Hotel Details</h3>
+      <label for="hotel_name">Hotel Name:</label>
+      <input type="text" id="hotel_name" value="Hyatt Regency" />
+
+      <label for="hotel_quality">Hotel Quality:</label>
+      <input type="text" id="hotel_quality" value="5 star" />
+
+      <label for="check_in_time">Check-in Time:</label>
+      <input type="time" id="check_in_time" value="14:00" />
+
+      <label for="check_out_time">Check-out Time:</label>
+      <input type="time" id="check_out_time" value="12:00" />
+
+      <label for="hotel_characteristics"
+        >Hotel Characteristics (comma-separated):</label
+      >
+      <input type="text" id="hotel_characteristics" value="pool, gym, wifi" />
+    </div>
+
+    <div class="section">
+      <h3>Location Details</h3>
+      <label for="city">City:</label>
+      <input type="text" id="city" value="New York" />
+
+      <label for="state">State:</label>
+      <input type="text" id="state" value="NY" />
+
+      <label for="country">Country:</label>
+      <input type="text" id="country" value="USA" />
+    </div>
+
+    <div class="section">
+      <h3>Schedule</h3>
+      <label for="schedule">Schedule:</label>
+      <textarea id="schedule" rows="10">
+2024-05-01: Arrival and Check-in, 2024-05-02: Team Building Activities, 2024-05-03: Workshops, 2024-05-04: Free Time, 2024-05-05: Departure</textarea
+      >
+    </div>
+
+    <div class="section">
+      <h3>Miscellaneous</h3>
+      <label for="dress_code">Dress Code:</label>
+      <input type="text" id="dress_code" value="Business Casual" />
+
+      <label for="event_hashtag">Event Hashtag:</label>
+      <input type="text" id="event_hashtag" value="#Teambuilding2024" />
+
+      <label for="other_notes">Other Notes:</label>
+      <input type="text" id="other_notes" value="Bring your laptops" />
+    </div>
+
+    <div class="section">
+      <h3>Nearby Tourist Spots</h3>
+      <label for="tourist_spots">Tourist Spots:</label>
+      <textarea id="tourist_spots" rows="4">
+Times Square - 2 miles, Metropolitan Museum of Art - 1 mile</textarea
+      >
+    </div>
+
+    <div class="container">
+      <button onclick="saveData()">Save Event Details</button>
+    </div>
+
+    <script>
+      function saveData() {
+        const eventDetails = {
+          company_name: document.getElementById("company_name").value,
+          event_title: document.getElementById("event_title").value,
+          date_range: {
+            start_date: document.getElementById("date_range_start").value,
+            end_date: document.getElementById("date_range_end").value,
+          },
+          budget: {
+            breakdown: {
+              accommodation: parseFloat(
+                document.getElementById("accommodation_budget").value
+              ),
+              food: parseFloat(document.getElementById("food_budget").value),
+              miscellaneous: parseFloat(
+                document.getElementById("miscellaneous_budget").value
+              ),
+              venue: parseFloat(document.getElementById("venue_budget").value),
+            },
+            total_amount: parseFloat(
+              document.getElementById("total_budget").value
+            ),
+            currency: "USD",
+          },
+          food_arrangements: {
+            is_food_required:
+              document.getElementById("is_food_required").value === "true",
+            dietary_restrictions: document
+              .getElementById("dietary_restrictions")
+              .value.split(", "),
+            meal_schedule: document.getElementById("meal_schedule").value,
+          },
+          hotel_details: {
+            hotel_name: document.getElementById("hotel_name").value,
+            hotel_quality: document.getElementById("hotel_quality").value,
+            check_in_time: document.getElementById("check_in_time").value,
+            check_out_time: document.getElementById("check_out_time").value,
+            hotel_characteristics: document
+              .getElementById("hotel_characteristics")
+              .value.split(", "),
+            price: {
+              amount: parseFloat(
+                document.getElementById("accommodation_budget").value
+              ),
+              currency: "USD",
+            },
+          },
+          location: {
+            city: document.getElementById("city").value,
+            state: document.getElementById("state").value,
+            country: document.getElementById("country").value,
+          },
+          schedule: document
+            .getElementById("schedule")
+            .value.split(", ")
+            .map((item) => {
+              return { date: item.split(":")[0], activity: item.split(":")[1] };
+            }),
+          miscellaneous: {
+            dress_code: document.getElementById("dress_code").value,
+            event_hashtag: document.getElementById("event_hashtag").value,
+            other_notes: document
+              .getElementById("other_notes")
+              .value.split(", "),
+          },
+          nearby_tourist_spots: document
+            .getElementById("tourist_spots")
+            .value.split(", ")
+            .map((item) => {
+              return {
+                venue_name: item.split(" - ")[0],
+                venue_distance_from_location: item.split(" - ")[1],
+              };
+            }),
+        };
+        console.log("Event Details Saved: ", eventDetails);
+        alert("Event details saved successfully!");
+      }
+    </script>
+  </body>
+</html>
