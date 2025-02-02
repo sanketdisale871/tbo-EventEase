@@ -1,8 +1,8 @@
 <!-- PROJECT LOGO -->
 <div align="center">
     <!-- <img src="./controllers/logo.png" alt="GlobalEase Logo" width="150"> -->
-    <img src="./public/img/logo.png" alt="GlobalEase Logo" width="150">
-  <h1 align="center"><b>citiWise: AI-Powered Companion for Smarter Financial Health and Family Wealth Management.</b></h1>
+    <img src="./public/img/logo.png" alt="tboEventEase Logo" width="150">
+  <h1 align="center"><b>tboEventEase: Easing Event Travel & Planning seamless and efficient.</b></h1>
 
 </div>
 
@@ -11,11 +11,36 @@
 
 ## ♾️ Problem Statement
 
-Enhancing Customer Experience in Banking and Finance - Empowering Customers with AI-Driven Financial Insights.
+There is a huge problem in the complexity of manually managing event & travel itineraries, leading to inefficiencies and a poor attendee experience.
 
 ## ♾️ Solution
 
-Citiwise is a personalized financial advisory platform designed to help users make better financial decisions with features like a dual scoring system to monitor credit and financial health, AI-driven spending and saving goals, and personalized investment suggestions based on risk tolerance and income. It enables families to manage all accounts in one place, offering clear visualizations for better financial tracking. Additionally, Citiwise includes innovative tools like citiGPT, an AI financial assistant, a gamified self-paced learning path for financial literacy, and daily learning challenges to encourage user engagement and improve financial management skills.
+tbo EventEase is a digital platform that simplifies event management for both organizers and attendees in the MICE industry.
+For organizers, it streamlines venue selection, event creation, and attendee management through real-time integrations with the TBO API.
+
+Attendees benefit from personalized itineraries, seamless registration, and automated updates, ensuring an engaging and efficient event experience.
+
+# For Organizers:
+
+- Streamlined Venue Booking and Event Creation
+
+  - Search and book hotels/conference halls using natural language prompts.
+  - Utilize TBO APIs to get real-time availability of venues and finalize bookings efficiently.
+  - Create an event page with all necessary details (schedule, location, and other information) in few clicks.
+
+- Effortless Event Management and Attendee Engagement
+  - Public/Private Registration links, itinerary planners, and tickets are automatically generated.
+  - Notifications and Reminders: Via email, call, and Google Calendar integration to keep attendees updated.
+
+# For Attendees:
+
+- Personalized Itinerary: Custom itineraries based on user preferences like budget, location, and event schedule.
+
+- Best Deals: Access to the best deals for accommodation, travel, and other services, ensuring cost-effective options.
+
+- Active Notifications: Real-time updates via email, calls, and Google Calendar integration to keep attendees informed.
+
+- Networking Opportunities: Connect with other attendees traveling from the same location, facilitating easy networking and collaboration.
 
 ## ⚙️ Built With
 
@@ -25,6 +50,7 @@ The technologies and tools used are:
 - Langchain
 - Groq
 - Pinecone
+- Langflow
 - NLP
 - HTML
 - CSS
@@ -43,7 +69,7 @@ The technologies and tools used are:
 1. Clone the repository
 
    ```sh
-   git clone https://github.com/sanketdisale871/citiWise.git
+   https://github.com/sanketdisale871/tbo-EventEase.git
    ```
 
 2. Install the dependencies:
@@ -61,7 +87,7 @@ The technologies and tools used are:
 
 ## Some Glimpses of WorkConnect
 
-- Dashboard
+<!-- - Dashboard
   ![alt text](image.png)
 
 - citiGPT
@@ -74,4 +100,4 @@ The technologies and tools used are:
   ![Investments](image-3.png)
 
 - My Liabilities
-  ![alt text](image-4.png)
+  ![alt text](image-4.png) -->
