@@ -96,8 +96,8 @@ ul {
 }
 
 .company-logo img {
-  width: 25%;
-  border-radius: 23px;
+  width: 28%;
+  /* border-radius: 23px; */
 }
 .hover-links {
   color: var(--primary-text-color);

@@ -29,7 +29,7 @@
         justify-content: space-between;
         margin-top: 1rem;
         margin-right: 3rem;
-        background-color: #041646;
+        background-color: #307fe2;
         padding: 0.8rem;
       }
       .banner-text {
@@ -42,7 +42,7 @@
         font-weight: bold;
       }
       .naVV {
-        background-color: #041646;
+        background-color: #307fe2;
         border-radius: 20px;
         margin-left: 2rem;
         margin-right: 2rem;
@@ -172,8 +172,8 @@
       <div class="message"><%=errMsg%></div>
       <% } %>
 
-      <div class="main-agileinfo" style="background-color: #041646">
-        <h1>Register</h1>
+      <div class="main-agileinfo" style="background-color: #307fe2">
+        <h1 style="color: #ff5924; font-weight: bold">Register</h1>
         <div class="agileits-top">
           <form action="/api/register" method="POST">
             <div class="registration-group">
@@ -286,13 +286,24 @@
                 id="userCountry"
                 name="country"
                 class="registration-select"
+                style="background-color: #307fe2"
                 required
               >
-                <option value="">Select Country</option>
-                <option value="India">India</option>
-                <option value="USA">USA</option>
-                <option value="Canada">Canada</option>
-                <option value="Germany">Germany</option>
+                <option value="" style="background-color: #307fe2">
+                  Select Country
+                </option>
+                <option value="India" style="background-color: #307fe2">
+                  India
+                </option>
+                <option value="USA" style="background-color: #307fe2">
+                  USA
+                </option>
+                <option value="Canada" style="background-color: #307fe2">
+                  Canada
+                </option>
+                <option value="Germany" style="background-color: #307fe2">
+                  Germany
+                </option>
                 <!-- Add more options as needed -->
               </select>
             </div>
