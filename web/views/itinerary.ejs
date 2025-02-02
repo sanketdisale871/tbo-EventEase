@@ -1,4 +1,267 @@
-<% if (itinerary) { %>
-<h1><%= itinerary %></h1>
-<!-- Rest of your itinerary display logic -->
-<% } %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Itinerary Details</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container mt-4">
+      <h2 class="mb-4">Edit Itinerary</h2>
+      <form action="/publish-event" method="POST">
+        <input type="hidden" name="_id" value="<%= itinerary._id %>" />
+
+        <% if (itinerary.company_name) { %>
+        <div class="mb-3">
+          <label class="form-label">Company Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="company_name"
+            value="<%= itinerary.company_name %>"
+          />
+        </div>
+        <% } %>
+
+        <!--  -->
+
+        <% if (itinerary.event_title) { %>
+        <div class="mb-3">
+          <label class="form-label">Event Title</label>
+          <input
+            type="text"
+            class="form-control"
+            name="event_title"
+            value="<%= itinerary.event_title %>"
+          />
+        </div>
+        <% } %>
+
+        <!--  -->
+        <% if (itinerary.number_of_days) { %>
+        <div class="mb-3">
+          <label class="form-label">Number of days</label>
+          <input
+            type="number"
+            class="form-control"
+            name="number_of_days"
+            value="<%= itinerary.number_of_days %>"
+          />
+        </div>
+        <% } %>
+
+        <!--  -->
+
+        <% if (itinerary.date_range.start_date) { %>
+        <div class="mb-3">
+          <label class="form-label">Start Date</label>
+          <input
+            type="text"
+            class="form-control"
+            name="start_date"
+            value="<%= itinerary.date_range.start_date %>"
+          />
+        </div>
+        <% } %>
+
+        <!--  -->
+
+        <% if (itinerary.date_range.end_date) { %>
+        <div class="mb-3">
+          <label class="form-label">End Date</label>
+          <input
+            type="text"
+            class="form-control"
+            name="end_date"
+            value="<%= itinerary.date_range.end_date %>"
+          />
+        </div>
+        <% } %>
+
+        <!--  -->
+        <% if (itinerary.location) { %>
+        <div class="mb-3">
+          <label class="form-label">Country</label>
+          <input
+            type="text"
+            class="form-control"
+            name="country"
+            value="<%= itinerary.location.country %>"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">State</label>
+          <input
+            type="text"
+            class="form-control"
+            name="state"
+            value="<%= itinerary.location.state %>"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">City</label>
+          <input
+            type="text"
+            class="form-control"
+            name="city"
+            value="<%= itinerary.location.city %>"
+          />
+        </div>
+        <% } %>
+
+        <!--  -->
+
+        <% if (itinerary.budget) { %>
+        <h4>Budget</h4>
+        <div class="row">
+          <div class="col-md-3">
+            <label class="form-label">Currency</label>
+            <input
+              type="text"
+              class="form-control"
+              name="budget[currency]"
+              value="<%= itinerary.budget.currency %>"
+            />
+          </div>
+
+          <div class="col-md-3">
+            <label class="form-label">Total Amount</label>
+            <input
+              type="number"
+              class="form-control"
+              name="budget[total_amount]"
+              value="<%= itinerary.budget.total_amount %>"
+            />
+          </div>
+
+          <% ["accommodation", "food", "venue", "miscellaneous"].forEach(key =>
+          { %>
+          <!--  -->
+          <% if (itinerary.budget.breakdown[key]) { %>
+          <div class="col-md-3">
+            <label class="form-label text-capitalize"> <%= key %> </label>
+            <input
+              type="number"
+              class="form-control"
+              name="budget[<%= key %>]"
+              value="<%= itinerary.budget.breakdown[key] %>"
+            />
+          </div>
+          <% } %>
+          <!--  -->
+          <% }) %>
+          <!--  -->
+        </div>
+        <% } %>
+
+        <!--  -->
+
+        <% if (itinerary.hotel_details) { %>
+        <h4>Hotel Details</h4>
+        <div class="row">
+          <div class="col-md-3">
+            <label class="form-label">Is accomodation required?</label>
+            <input
+              type="text"
+              class="form-control"
+              name="hotel_details[is_accomodation_required]"
+              value="<%= itinerary.hotel_details.is_accommodation_required %>"
+            />
+          </div>
+
+          <div class="col-md-3">
+            <label class="form-label">Hotel Quality</label>
+            <input
+              type="text"
+              class="form-control"
+              name="hotel_details[hotel_quality]"
+              value="<%= itinerary.hotel_details.hotel_quality %>"
+            />
+          </div>
+
+          <div class="col-md-3">
+            <label class="form-label">Hotel Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="hotel_details[hotel_name]"
+              value="<%= itinerary.hotel_details.hotel_name %>"
+            />
+          </div>
+
+          <div class="col-md-3">
+            <label class="form-label">Total Amount</label>
+            <input
+              type="number"
+              class="form-control"
+              name="hotel_details[total_amount]"
+              value="<%= itinerary.hotel_details.price.amount %>"
+            />
+          </div>
+
+          <!--  -->
+        </div>
+        <% } %>
+
+        <!--  -->
+        <% if (itinerary.schedule && itinerary.schedule.length> 0) { %>
+        <h4 class="mt-4">Schedule</h4>
+        <% itinerary.schedule.forEach((day, dayIndex)=> { %>
+        <div class="border p-3 mb-3">
+          <h5>Day <%= day.day_number %> - <%= day.date %></h5>
+          <% if (day.time_table && day.time_table.length> 0) { %> <%
+          day.time_table.forEach((activity, activityIndex)=> { %>
+          <div class="mb-2">
+            <label class="form-label">Activity</label>
+            <input
+              type="text"
+              class="form-control"
+              name="schedule[<%= dayIndex %>][time_table][<%= activityIndex %>][activity]"
+              value="<%= activity.activity %>"
+            />
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <label class="form-label">Start Time</label>
+              <input
+                type="text"
+                class="form-control"
+                name="schedule[<%= dayIndex %>][time_table][<%= activityIndex %>][start_time]"
+                value="<%= activity.start_time %>"
+              />
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">End Time</label>
+              <input
+                type="text"
+                class="form-control"
+                name="schedule[<%= dayIndex %>][time_table][<%= activityIndex %>][end_time]"
+                value="<%= activity.end_time %>"
+              />
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Location</label>
+              <input
+                type="text"
+                class="form-control"
+                name="schedule[<%= dayIndex %>][time_table][<%= activityIndex %>][location]"
+                value="<%= activity.location %>"
+              />
+            </div>
+          </div>
+          <% }) %> <% } %>
+        </div>
+        <% }) %> <% } %>
+
+        <button type="submit" class="btn btn-primary">Publish Event</button>
+      </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

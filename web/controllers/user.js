@@ -184,6 +184,66 @@ const renderItinerary = async (req, res) => {
   }
 };
 
+const renderEvent = async (req, res) => {
+  try {
+    const eventId = req.params.eventid;
+    if (!eventId) {
+      return res.status(400).send("Event ID is required");
+    }
+
+    const event = await Event.findById(eventId);
+
+    if (!event) {
+      return res.status(404).send("Event not found");
+    }
+
+    res.render("event", { event });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Error fetching event");
+  }
+};
+
+const publishEvent = async (req, res) => {
+  try {
+    const { _id } = req.body;
+    const itinerary = await Itinerary.findById(_id);
+
+    console.log(itinerary.event_title);
+
+    if (!itinerary) {
+      return res.status(404).send("Itinerary not found");
+    } else {
+      await Event.init();
+
+      const new_event = new Event({
+        company_name: itinerary.company_name,
+        owner_id: itinerary.owner_id,
+        event_title: itinerary.event_title,
+        number_of_days: itinerary.number_of_days,
+        date_range: itinerary.date_range,
+        location: itinerary.location,
+        budget: itinerary.budget,
+        hotel_details: itinerary.hotel_details,
+        food_arrangements: itinerary.food_arrangements,
+        schedule: itinerary.schedule,
+        miscellaneous: itinerary.miscellaneous,
+        weather: itinerary.weather,
+        nearby_tourist_spots: itinerary.nearby_tourist_spots,
+        ongoing_festivals: itinerary.ongoing_festivals,
+      });
+      // new_event.itineraryDetails = itinerary;
+
+      await new_event.save();
+      console.log("Event published successfully");
+      res.redirect(`/event/${new_event._id}`);
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Error publisj=hing ebent");
+  }
+};
+
 // ::::::::::::::::::::::;;;; Chat bot End;;;;;;;;::::::::::::
 module.exports = {
   renderDashboard,
@@ -195,6 +255,8 @@ module.exports = {
   logout,
   renderChat,
   renderItinerary,
+  publishEvent,
+  renderEvent,
 };
 
 // Liabilities
