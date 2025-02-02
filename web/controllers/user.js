@@ -295,6 +295,12 @@ const sendEmail = (receiverEmail) => {
     to: receiverEmail,
     subject: 'Your itinerary for the event',
     text: 'Itinerary here',
+    html: '<img src="cid:unique@kreata.ee"/>',
+    attachments: [{
+      filename: 'image.png',
+      path: __dirname + '\\img.png',
+      cid: 'unique@kreata.ee' //same cid value as in the html img src
+    }]
   };
 
   transporter.sendMail(mailOptions, function (error, info) {
