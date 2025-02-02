@@ -5,6 +5,8 @@ const Account = require("../models/Account");
 const Event = require("../models/Event");
 const Itinerary = require("../models/Itinerary");
 const AttenRes = require("../models/User_Attend_Res");
+const nodemailer = require('nodemailer');
+
 
 // create json web token
 const maxAge = 1000 * 365 * 24 * 60 * 60;
@@ -257,6 +259,7 @@ const registerForEvent = async (req, res) => {
     console.log(event_id);
 
     const event = await Event.findById(event_id);
+    const user = await User.findById(userId);
 
     if (!event.hasOwnProperty("attendees")) {
       event["attendees"] = [userId];
@@ -268,12 +271,40 @@ const registerForEvent = async (req, res) => {
 
     await event.save();
 
+    sendEmail(user.email);
+
     res.redirect(`/event/${event_id}`);
   } catch (error) {
     console.log(error);
     res.status(500).send("Error registering for event");
   }
 };
+
+const sendEmail = (receiverEmail) => {
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.EMAIL,
+      pass: process.env.PASSWORD
+    }
+  });
+
+  const mailOptions = {
+    from: process.env.EMAIL,
+
+    to: receiverEmail,
+    subject: 'Your itinerary for the event',
+    text: 'Itinerary here',
+  };
+
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
+}
 
 // ::::::::::::::::::::::;;;; Chat bot End;;;;;;;;::::::::::::
 module.exports = {
