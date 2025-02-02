@@ -87,7 +87,7 @@ const login = async (req, res) => {
     const user = await User.login(email, password);
 
     // If login is successful, generate a token
-    // const token = createUserToken(user._id);
+    const token = createUserToken(user._id);
 
     res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
     res.redirect("/");
@@ -165,9 +165,7 @@ const renderChat = async (req, res) => {
 };
 
 const renderItinerary = async (req, res) => {
-
   try {
-
     const itineraryId = req.params.itineraryid;
     if (!itineraryId) {
       return res.status(400).send("Itinerary ID is required");
@@ -185,7 +183,6 @@ const renderItinerary = async (req, res) => {
     res.status(500).send("Error fetching itinerary");
   }
 };
-
 
 // ::::::::::::::::::::::;;;; Chat bot End;;;;;;;;::::::::::::
 module.exports = {

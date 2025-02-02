@@ -8,6 +8,7 @@ const { requireUserAuth } = require("../middleware/auth");
 router.post("/register", userController.register);
 router.post("/login", userController.login);
 router.get("/itinerary/:itineraryid", userController.renderItinerary);
+router.get("/logout", requireUserAuth, userController.logout);
 
 router.get("/download", async (req, res) => {
   try {
