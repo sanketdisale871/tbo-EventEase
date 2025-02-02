@@ -25,7 +25,7 @@
         <input type="text" placeholder="Search event..." class="search-bar" />
       </div>
       <div class="center">
-        <img src="/img/tbocom.png" alt="Logo" class="logo1" />
+        <img src="/img/logo.png" alt="Logo" class="logo1" />
       </div>
       <div class="right">
         <div class="user-info">
@@ -38,41 +38,39 @@
       <!-- <img src="/img/amazon.jpg" alt="Event Image" class="main-image" /> -->
     </div>
 
-    <div class="event-details">
+    <div class="event-details" style="color: #ff5924;">
       <div class="event-info">
         <h2 class="event-title"><%= event.event_title%></h2>
         <p class="event-location">
           Location: <%= event.location.city%> , <%= event.location.state%>, <%=
           event.location.country%>
         </p>
-        <button class="register-button">Register</button>
-        <p class="registered-info">
-          <%= event.attendees ? event.attendees.length : 0 %>
-        </p>
+        
+    
         <form action="/register-event" method="POST">
           <input type="hidden" name="event_id" value="<%= event._id %>" />
           <button type="submit" class="register-button" <%= is_registered ? 'disabled' : '' %>>
             <%= is_registered ? 'Already Registered' : 'Register' %>
           </button>
         </form>
-        <p class="registered-info">100 people registered</p>
+        <p class="registered-info"><%= event.attendees ? event.attendees.length : 0 %> people registered</p>
       </div>
-      <div class="event-date">
-        <div class="date-box">
+      <div class="event-date" style="color: #ff5924;">
+        <div class="date-box" style="color: #ff5924;">
           <% const startDate = new Date(event.date_range.start_date); const day
           = startDate.getDate(); const month =
           startDate.toLocaleString('default', { month: 'long' }); const year =
           startDate.getFullYear(); %>
-          <span class="date-number"><%= day %></span>
-          <span class="date-month"><%= month %>, <%= year %></span>
+          <span class="date-number" style="color: #ff5924;"><%= day %></span>
+          <span class="date-month" ><%= month %>, <%= year %></span>
         </div>
       </div>
     </div>
 
     <div class="additional-info">
       <div class="info-details">
-        <h3 class="info-header">All you need to know</h3>
-        <p class="info-text">
+        <h3 class="info-header"  style="color: #ff5924;">All you need to know</h3>
+        <p class="info-text"   style="color: #ff5924;">
           This event will include various activities and opportunities to
           connect with people. Be sure to attend and enjoy the event! This event
           will include various activities and opportunities to connect with
@@ -91,7 +89,7 @@
           </div>
           <div class="stat-content">
             <span class="stat-label">People Registered</span>
-            <span class="stat-value">150</span>
+            <span class="stat-value" style="color: #ff5924;">150</span>
           </div>
         </div>
         <div class="stat-row">
@@ -100,7 +98,7 @@
           </div>
           <div class="stat-content">
             <span class="stat-label">Team Size</span>
-            <span class="stat-value">4</span>
+            <span class="stat-value" style="color: #ff5924;">4</span>
           </div>
         </div>
         <div class="stat-row">
@@ -109,7 +107,7 @@
           </div>
           <div class="stat-content">
             <span class="stat-label">Impressions</span>
-            <span class="stat-value">1,200</span>
+            <span class="stat-value" style="color: #ff5924;">1,200</span>
           </div>
         </div>
         <div class="stat-row">
@@ -118,7 +116,7 @@
           </div>
           <div class="stat-content">
             <span class="stat-label">Registration Deadline</span>
-            <span class="stat-value"><%= month %> <%= day %>, <%= year %></span>
+            <span class="stat-value" style="color: #ff5924;"><%= month %> <%= day %>, <%= year %></span>
           </div>
         </div>
         <div class="stat-row">
@@ -133,7 +131,7 @@
     </div>
 
     <div class="schedule-details">
-      <h1><%= event.event_title%></h1>
+      <h1 style="color: #ff5924;"><%= event.event_title%></h1>
       <div class="schedule-box">
         <div class="column left">
           <div class="schedule-row">
@@ -147,7 +145,7 @@
               now.toLocaleString('default', { month: 'short' }); const rbyear
               =String(now.getFullYear()).slice(-2); %>
 
-              <span class="stat-value">
+              <span class="stat-value" style="color: #ff5924;">
                 <%= rbday %> <%= rbmonth %> <%= rbyear %>, 11:59 PM IST
               </span>
             </div>
@@ -158,7 +156,7 @@
             </div>
             <div class="stat-content">
               <span class="stat-label">Event starts</span>
-              <span class="stat-value"
+              <span class="stat-value" style="color: #ff5924;"
                 ><%= day %> <%= month %> <%= year %>, 11:59 PM IST</span
               >
             </div>
@@ -171,7 +169,7 @@
             </div>
             <div class="stat-content">
               <span class="stat-label">Registration deadline</span>
-              <span class="stat-value"
+              <span class="stat-value" style="color: #ff5924;"
                 ><%= day %> <%= month %> <%= year %>, 11:59 PM IST</span
               >
             </div>
@@ -186,7 +184,7 @@
               eday= startDate.getDate(); const
               emonth=startDate.toLocaleString('default', { month: 'long' });
               const eyear= startDate.getFullYear(); %>
-              <span class="stat-value"
+              <span class="stat-value" style="color: #ff5924;"
                 ><%= eday+4 %> <%= emonth %> <%= eyear %>, 11:59 PM IST</span
               >
             </div>
@@ -196,7 +194,7 @@
     </div>
 
     <div class="attendees-section">
-      <h3 class="attendees-heading">Our Attendees</h3>
+      <h3 class="attendees-heading" style="color: #ff5924;">Our Attendees</h3>
       <div class="map-container">
         <iframe
           class="map-frame"
@@ -207,9 +205,9 @@
         >
         </iframe>
         <div class="attendee-card">
-          <h4 class="attendee-card-heading">Connect with Attendees</h4>
+          <h4 class="attendee-card-heading" style="color: #ff5924;"> Connect with Attendees</h4>
 
-          <h5>You are the First Attendee!</h5>
+          <h5 style="color: #ff5924;">You are the First Attendee!</h5>
           <!-- <div class="attendee-row">
             <img src="/img/Photo.jpg" alt="Attendee 1" class="attendee-photo" />
             <div class="attendee-info">
@@ -229,7 +227,7 @@
       </div>
     </div>
 
-    <footer class="footer">
+    <!-- <footer class="footer">
       <div class="footer-column logo-column">
         <img src="/img/tbocom.png" alt="Logo" class="footer-logo" />
         <div class="social-icons">
@@ -276,6 +274,6 @@
         <p>XXXX989890</p>
         <p>xxx@gmail.com</p>
       </div>
-    </footer>
+    </footer> -->
   </body>
 </html>

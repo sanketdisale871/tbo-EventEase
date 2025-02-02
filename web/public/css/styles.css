@@ -1,473 +1,473 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #444;
-    color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #444;
+  color: #fff;
 }
 
 .left .search-bar {
-    padding: 8px;
-    border: none;
-    border-radius: 20px;
-    outline: none;
-    border: 2px solid #000;
+  padding: 8px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  border: 2px solid #000;
 }
 
 .center .logo1 {
-    max-height: 40px;
+  max-height: 79px;
 }
 
 .center .logo2 {
-    max-height: 32px;
+  max-height: 32px;
 }
 
 .right .user-info {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .right .user-photo {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-    border: 2px solid #000;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 2px solid #000;
 }
 
 .right .user-name {
-    font-size: 16px;
-    color: #fff;
+  font-size: 16px;
+  color: #fff;
 }
 
 .image-container {
-    position: relative;
-    padding: 20px;
+  position: relative;
+  padding: 20px;
 }
 
 .image-container .main-image {
-    width: 100%;
-    border-radius: 10px;
+  width: 100%;
+  border-radius: 10px;
 }
 
 .image-container .overlay-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: black;
-    font-size: 36px;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 36px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .event-details {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin: 100px;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 10px;
-    border: 2px solid #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 100px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  border: 2px solid #000;
 }
 
 .event-info {
-    flex: 7;
-    margin-left: 50px;
-    /* 70% width */
+  flex: 7;
+  margin-left: 50px;
+  /* 70% width */
 }
 
 .event-title {
-    font-size: 40px;
-    font-weight: bold;
-    margin-bottom: 10px;
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .event-location {
-    font-size: 18px;
-    margin-bottom: 20px;
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
 .register-button {
-    display: block;
-    width: 35%;
-    padding: 15px;
-    font-size: 18px;
-    font-weight: bold;
-    color: white;
-    background-color: #000;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 10px;
-    text-align: center;
+  display: block;
+  width: 35%;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: #307fe2;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .register-button:hover {
-    background-color: #333;
+  background-color: #333;
 }
 
 .registered-info {
-    font-size: 20px;
-    color: #666;
+  font-size: 20px;
+  color: #666;
 }
 
 .event-date {
-    flex: 3;
-    /* 30% width */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  flex: 3;
+  /* 30% width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .date-box {
-    width: 60%;
-    height: 210px;
-    margin: 20px;
-    border-radius: 10px;
-    background-color: #000;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 60%;
+  height: 210px;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: #307fe2;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .date-number {
-    font-size: 90px;
-    font-weight: bold;
+  font-size: 90px;
+  font-weight: bold;
 }
 
 .date-month {
-    font-size: 14px;
-    text-transform: uppercase;
+  font-size: 14px;
+  text-transform: uppercase;
 }
 
 .additional-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    /* Ensures both rectangles have equal height */
-    margin: 100px;
-    gap: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  /* Ensures both rectangles have equal height */
+  margin: 100px;
+  gap: 20px;
 }
 
 .info-details {
-    flex: 7;
-    /* 60% width */
-    background-color: #f4f4f4;
-    padding: 20px;
-    padding-left: 40px;
-    padding-right: 40px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: 2px solid #000;
-    /* Makes content evenly spaced */
+  flex: 7;
+  /* 60% width */
+  background-color: #f4f4f4;
+  padding: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid #000;
+  /* Makes content evenly spaced */
 }
 
 .info-header {
-    font-size: 35px;
-    font-weight: bold;
-    margin-bottom: 15px;
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 15px;
 }
 
 .info-text {
-    font-size: 20px;
-    text-align: justify;
-    line-height: 1.6;
-    color: #333;
+  font-size: 20px;
+  text-align: justify;
+  line-height: 1.6;
+  color: #333;
 }
 
 .info-stats {
-    flex: 3;
-    /* 40% width */
-    background-color: #f4f4f4;
-    padding: 20px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: 2px solid #000;
-    /* Ensures the content fills the space */
+  flex: 3;
+  /* 40% width */
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid #000;
+  /* Ensures the content fills the space */
 }
 
 .stat-row {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .icon-box {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 15px;
-    border: 2px solid #000;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+  border: 2px solid #000;
 }
 
 .icon-box i {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 .icon {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 }
 
 .stat-content {
-    text-align: left;
-    /* Centers labels and values */
+  text-align: left;
+  /* Centers labels and values */
 }
 
 .stat-label {
-    display: block;
-    font-size: 20px;
-    font-weight: 500;
-    color: #555;
-    margin-bottom: 5px;
+  display: block;
+  font-size: 20px;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 5px;
 }
 
 .stat-value {
-    display: block;
-    font-size: 18px;
-    font-weight: bold;
-    color: #000;
-    text-align: left;
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  text-align: left;
 }
 
 .register-now-button {
-    margin: auto;
-    width: 100%;
-    padding: 15px;
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-    background-color: #000;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
+  margin: auto;
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
 }
 
 .register-now-button:hover {
-    background-color: #333;
+  background-color: #333;
 }
 
 .schedule-details {
-    margin: 100px;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 10px;
-    border: 2px solid #000;
+  margin: 100px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  border: 2px solid #000;
 }
 
 .schedule-details h1 {
-    font-size: 40px;
-    text-align: center;
+  font-size: 40px;
+  text-align: center;
 }
 
 .schedule-box {
-    display: flex;
-    gap: 50px;
+  display: flex;
+  gap: 50px;
 }
 
 .column {
-    flex: 1;
-    padding: 30px;
+  flex: 1;
+  padding: 30px;
 }
 
 .schedule-row {
-    margin: auto;
-    text-align: center;
-    padding: auto;
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    margin-left: 20%;
+  margin: auto;
+  text-align: center;
+  padding: auto;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-left: 20%;
 }
 
 /* Our Attendees Section */
 .attendees-section {
-    margin: 60px 0;
-    text-align: center;
+  margin: 60px 0;
+  text-align: center;
 }
 
 .attendees-heading {
-    font-size: 40px;
-    font-weight: bold;
-    margin-bottom: 40px;
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 40px;
 }
 
 /* Map Container */
 .map-container {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
 }
 
 .map-frame {
-    width: 100%;
-    height: 800px;
-    border: 0;
+  width: 100%;
+  height: 800px;
+  border: 0;
 }
 
 /* Floating Attendee Card */
 .attendee-card {
-    position: absolute;
-    bottom: 40px;
-    right: 40px;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 15px;
-    width: 400px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 15px;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .attendee-card-heading {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
 }
 
 /* Attendee Row */
 .attendee-row {
-    display: flex;
-    align-items: center;
-    background-color: #f4f4f4;
-    /* Background color */
-    border: 2px solid #000;
-    /* Solid border */
-    padding: 10px;
-    border-radius: 10px;
-    margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  background-color: #f4f4f4;
+  /* Background color */
+  border: 2px solid #000;
+  /* Solid border */
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 .attendee-photo {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 20px;
-    margin-left: 20px;
-    border: 2px solid #000;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
+  margin-left: 20px;
+  border: 2px solid #000;
 }
 
 .attendee-info {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .attendee-name {
-    font-size: 16px;
-    font-weight: bold;
-    text-align: left;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
 }
 
 /* Fixed Button Size */
 .message-button {
-    width: 100px;
-    /* Fixed width */
-    height: 30px;
-    /* Fixed height */
-    font-size: 14px;
-    color: white;
-    background-color: #000;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    margin-top: 5px;
+  width: 100px;
+  /* Fixed width */
+  height: 30px;
+  /* Fixed height */
+  font-size: 14px;
+  color: white;
+  background-color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 5px;
 }
 
 .message-button:hover {
-    background-color: #333;
+  background-color: #333;
 }
 
 /* Footer Section */
 .footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    background-color: #f4f4f4;
-    padding: 30px 60px;
-    width: 100%;
-    box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #f4f4f4;
+  padding: 30px 60px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Each Column */
 .footer-column {
-    flex: 1;
-    text-align: left;
+  flex: 1;
+  text-align: left;
 }
 
 .footer-column h4 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .footer-column p {
-    font-size: 14px;
-    color: #333;
-    margin: 5px 0;
+  font-size: 14px;
+  color: #333;
+  margin: 5px 0;
 }
 
 .logo-column {
-    flex: 1.5;
-    text-align: center;
+  flex: 1.5;
+  text-align: center;
 }
 
 .footer-logo {
-    width: 200px;
-    margin-bottom: 10px;
+  width: 200px;
+  margin-bottom: 10px;
 }
 
 .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 .social-circle {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    background-color: #ccc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .social-circle i {
-    font-size: 25px;
+  font-size: 25px;
 }
 
 /* Responsive Layout */
 @media (max-width: 768px) {
-    .footer {
-        flex-wrap: wrap;
-        justify-content: center;
-        text-align: center;
-    }
+  .footer {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
 
-    .footer-column {
-        flex: 50%;
-        margin-bottom: 20px;
-    }
+  .footer-column {
+    flex: 50%;
+    margin-bottom: 20px;
+  }
 
-    .logo-column {
-        flex: 100%;
-    }
+  .logo-column {
+    flex: 100%;
+  }
 }
