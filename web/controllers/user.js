@@ -186,6 +186,9 @@ const renderItinerary = async (req, res) => {
 
 const renderEvent = async (req, res) => {
   try {
+
+    const userId = req.userId;
+    console.log(userId);
     const eventId = req.params.eventid;
     if (!eventId) {
       return res.status(400).send("Event ID is required");
@@ -197,7 +200,9 @@ const renderEvent = async (req, res) => {
       return res.status(404).send("Event not found");
     }
 
-    res.render("event", { event });
+    const is_registered = event.attendees.includes(userId);
+
+    res.render("event", { event, is_registered });
   } catch (error) {
     console.log(error);
     res.status(500).send("Error fetching event");
@@ -244,6 +249,32 @@ const publishEvent = async (req, res) => {
   }
 };
 
+const registerForEvent = async (req, res) => {
+  try {
+    const { event_id } = req.body;
+    const userId = req.userId;
+    console.log(userId);
+    console.log(event_id);
+
+    const event = await Event.findById(event_id);
+
+    if (!event.hasOwnProperty("attendees")) {
+      event["attendees"] = [userId];
+    } else if (event["attendees"].includes(userId)) {
+      return res.status(400).send("User already registered for event");
+    } else {
+      event["attendees"].push(userId);
+    }
+
+    await event.save();
+
+    res.redirect(`/event/${event_id}`);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Error registering for event");
+  }
+};
+
 // ::::::::::::::::::::::;;;; Chat bot End;;;;;;;;::::::::::::
 module.exports = {
   renderDashboard,
@@ -257,6 +288,7 @@ module.exports = {
   renderItinerary,
   publishEvent,
   renderEvent,
+  registerForEvent,
 };
 
 // Liabilities

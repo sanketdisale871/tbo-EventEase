@@ -12,6 +12,8 @@ router.get("/citigpt", requireUserAuth, userController.renderChat);
 router.post("/publish-event", requireUserAuth, userController.publishEvent);
 router.get("/event/:eventid", requireUserAuth, userController.renderEvent);
 
+router.post("/register-event", requireUserAuth, userController.registerForEvent);
+
 router.get(
   "/itinerary/:itineraryid",
   requireUserAuth,

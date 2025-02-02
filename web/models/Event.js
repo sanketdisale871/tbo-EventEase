@@ -256,6 +256,9 @@ const eventSchema = new mongoose.Schema({
   ongoing_festivals: {
     type: [String],
   },
+  attendees: {
+    type: [String],
+  },
 });
 
 const Event = mongoose.model("Event", eventSchema);
