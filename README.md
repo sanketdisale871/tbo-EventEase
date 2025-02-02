@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <div align="center">
     <!-- <img src="./controllers/logo.png" alt="GlobalEase Logo" width="150"> -->
-    <img src="./public/img/logo.png" alt="tboEventEase Logo" width="150">
+    <img src="./images/logo.png" alt="tboEventEase Logo" width="150">
   <h1 align="center"><b>tboEventEase: Easing Event Travel & Planning seamless and efficient.</b></h1>
 
 </div>
