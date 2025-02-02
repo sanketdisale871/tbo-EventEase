@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 const itinerarySchema = new mongoose.Schema({
+  owner_id: {
+    type: String,
+    required: true,
+  },
   company_name: {
     type: String,
     required: true,
